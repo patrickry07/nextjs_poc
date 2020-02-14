@@ -6,8 +6,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
-const dotenv = require("dotenv");
-const env = dotenv.config().parsed;
 
 let DIST_DIR = "dist";
 

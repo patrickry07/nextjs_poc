@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import Nav from "../src/Nav.jsx";
 import Homepage from "../src/Homepage.jsx";
 const HomePage = () => {
-  return <Homepage is_next={true}/>;
-}
+  return (
+    <>
+      <Nav is_next={true} />
+      <Homepage is_next={true} />
+    </>
+  );
+};
 
 export default HomePage;

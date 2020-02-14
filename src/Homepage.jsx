@@ -11,10 +11,8 @@ class Homepage extends React.Component {
     };
   }
   componentDidMount() {
-      console.log('hello homepage')
     Axios.get("https://randomfox.ca/floof/")
       .then(({ data }) => {
-        console.log(data);
         return this.setState({ cat: data });
       })
       .catch(error => {
