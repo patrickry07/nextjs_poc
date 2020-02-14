@@ -1,29 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Homepage from "./Homepage.jsx";
+import Cat from "./Cat.jsx";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class AppRouter extends React.Component {
+  render() {
+    return (
+      <>
+        <Router>
+          {/* <Link to="/cat">FIND OUT MORE</Link> */}
+          <Route exact path={"/"}>
+            <Homepage is_next={false} />
+          </Route>
+          <Route
+            exact
+            path={"/cat"}
+            render={(props) => <Cat {...props} is_next={true} url={props.location.state.url} />}
+          ></Route>
+        </Router>
+      </>
+    );
+  }
 }
-
-export default App;
-ReactDOM.render(<App />, document.getElementById("root"));
-
+export default AppRouter;
