@@ -10,6 +10,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "compression-webpack-plugin": "^3.1.0",
     "dotenv": "^8.2.0",
+    "es6-promise": "^4.2.8",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "next": "^9.2.1",
@@ -24,12 +25,12 @@
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "next_dev": "next -p 1005",
+    "next_dev": "next -p 4000",
     "next_build": "next build",
     "next_start": "next start",
     "dev": "npm run next_dev & npm run start",
     "dev_wp": "webpack -d --mode development --watch",
-    "start": "PORT=1001 react-scripts start",
+    "start": "PORT=4001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -27,13 +27,7 @@ let plugins = [
 
   // Automatically load modules instead of having to import or require them everywhere.
   new webpack.ProvidePlugin({
-    // underscore
-    _: "underscore",
-    "window._": "underscore",
-
-    // jQuery - Needed for plugins not using NPM
-
-    // Marionette - TODO: deprecated
+    
     Promise: "es6-promise"
   })
 ];

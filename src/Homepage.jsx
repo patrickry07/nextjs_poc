@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
-import NextLink from "next/link";
-import Cat from "./Cat.jsx";
+import Link from "./Link.jsx";
 import Axios from "axios";
 
 class Homepage extends React.Component {
@@ -19,7 +11,7 @@ class Homepage extends React.Component {
     };
   }
   componentDidMount() {
-    console.log(this.props);
+      console.log('hello homepage')
     Axios.get("https://randomfox.ca/floof/")
       .then(({ data }) => {
         console.log(data);
@@ -29,32 +21,18 @@ class Homepage extends React.Component {
         throw new Error(error);
       });
   }
-  selectCat() {}
   render() {
     const { cat } = this.state;
     const { is_next } = this.props;
     return (
       <>
         <img src={cat.image} alt=""></img>
-        {is_next ? (
-          <NextLink
-            href={{ pathname: "/cat", query: { url: cat.link } }}
-            as="/cat"
-          >
-            <a>Cat</a>
-          </NextLink>
-        ) : (
-          <Link
-            to={{
-              pathname: `/cat`,
-              state: {
-                url: cat.link
-              }
-            }}
-          >
-            FIND OUT MORE
-          </Link>
-        )}
+        <Link
+          is_next={is_next}
+          text={"Find out more!"}
+          data={{ url: cat.link }}
+          path="/cat"
+        />
       </>
     );
   }
